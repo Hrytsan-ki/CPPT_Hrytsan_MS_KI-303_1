@@ -1,0 +1,64 @@
+<Window
+    Height="450"
+    ResizeMode="NoResize"
+    Title="Купівля квитків"
+    Width="1000"
+    WindowStartupLocation="CenterScreen"
+    x:Class="lab2_6.Pages.TrainSeatsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Window.Resources>
+        <ResourceDictionary Source="../styles.xaml" />
+    </Window.Resources>
+    <Grid Margin="10">
+        <TextBlock
+            FontSize="20"
+            FontWeight="Bold"
+            HorizontalAlignment="Center"
+            Margin="0,10,0,10"
+            Text="Місця в потягу" />
+
+        <Grid
+            HorizontalAlignment="Center"
+            Margin="0,50,0,0"
+            Name="SeatsGrid"
+            VerticalAlignment="Top" />
+
+        <Button
+            Click="CloseClick"
+            Content="Закрити"
+            Height="30"
+            HorizontalAlignment="Right"
+            Margin="10"
+            VerticalAlignment="Bottom"
+            Width="100" />
+
+        <Button
+            Click="BuyTicketsClick"
+            Content="Купити та оцінити"
+            Height="30"
+            HorizontalAlignment="Center"
+            Margin="10"
+            VerticalAlignment="Bottom"
+            Visibility="Collapsed"
+            Width="300"
+            x:Name="BuyButton" />
+
+        <StackPanel
+            HorizontalAlignment="Left"
+            Margin="10"
+            Orientation="Horizontal"
+            VerticalAlignment="Bottom">
+            <TextBlock
+                Margin="0,0,5,0"
+                Text="Оцінка: "
+                VerticalAlignment="Center" />
+            <TextBox
+                Height="30"
+                PreviewTextInput="RatingTextBox_PreviewTextInput"
+                TextChanged="RatingTextBox_TextChanged"
+                Width="50"
+                x:Name="RatingTextBox" />
+        </StackPanel>
+    </Grid>
+</Window>
